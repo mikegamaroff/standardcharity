@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="501px" height="106px" viewBox="0 0 501 106" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 5</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#AAE4FF" stop-opacity="0.170563811" offset="0%"></stop>
+            <stop stop-color="#82A2FF" stop-opacity="0.216839921" offset="45.4576647%"></stop>
+            <stop stop-color="#7C99FF" stop-opacity="0.223361389" offset="48.326647%"></stop>
+            <stop stop-color="#5255FF" stop-opacity="0.270623907" offset="99.934016%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#AAE4FF" stop-opacity="0.170563811" offset="0%"></stop>
+            <stop stop-color="#5255FF" stop-opacity="0" offset="99.934016%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="SideNav" transform="translate(0.000000, -572.000000)">
+            <g id="NavBar" transform="translate(0.000000, 572.000000)">
+                <g id="Group-5">
+                    <rect id="Rectangle" fill="url(#linearGradient-1)" opacity="0.6" x="0" y="0" width="501" height="106"></rect>
+                    <path d="M0,0 L501,0 C350.653394,13.942928 246.986727,26.942928 190,39 C133.013273,51.057072 69.6799396,73.3904053 0,106 L0,0 Z" id="Rectangle-Copy-8" fill="url(#linearGradient-2)" opacity="0.508765811" transform="translate(250.500000, 53.000000) scale(-1, 1) translate(-250.500000, -53.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

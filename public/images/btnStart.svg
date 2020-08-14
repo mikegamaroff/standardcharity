@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="408px" height="135px" viewBox="0 0 408 135" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 5</title>
+    <defs>
+        <radialGradient cx="50%" cy="4.64111299%" fx="50%" fy="4.64111299%" r="123.720875%" gradientTransform="translate(0.500000,0.046411),scale(0.245856,1.000000),rotate(90.000000),scale(1.000000,1.903321),translate(-0.500000,-0.046411)" id="radialGradient-1">
+            <stop stop-color="#FFE8A4" offset="0%"></stop>
+            <stop stop-color="#BF7900" offset="100%"></stop>
+        </radialGradient>
+        <rect id="path-2" x="0" y="0" width="362" height="89" rx="30"></rect>
+        <filter x="-9.5%" y="-38.8%" width="119.1%" height="177.5%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="11.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.668542395   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0.687472684" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="99.934016%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Splash" transform="translate(-191.000000, -1109.000000)">
+            <g id="Group-2" transform="translate(214.000000, 1132.000000)">
+                <g id="Group-5">
+                    <g id="Rectangle-Copy-3">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <rect stroke="#D99F01" stroke-width="4" stroke-linejoin="square" fill="url(#radialGradient-1)" fill-rule="evenodd" x="2" y="2" width="358" height="85" rx="30"></rect>
+                    </g>
+                    <path d="M49,2 L359,2 L359,2 C257.568557,10.9445198 187.629768,19.2841425 149.183633,27.0188679 C110.737497,34.7535934 68.0096199,49.0806374 21,70 L21,30 C21,14.536027 33.536027,2 49,2 Z" id="Rectangle-Copy-7" fill="url(#linearGradient-4)" opacity="0.58984375" transform="translate(190.000000, 36.000000) scale(-1, 1) translate(-190.000000, -36.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

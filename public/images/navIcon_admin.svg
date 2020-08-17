@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="43px" height="53px" viewBox="0 0 43 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Combined Shape</title>
+    <defs>
+        <path d="M85.1997889,50 C89.6753971,50 88.9576747,54.6941667 88.9576747,58.75 C88.9576747,67.71 81.6044062,75 72.5042285,75 C63.4040508,75 56,67.71 56,58.75 L56,58.75 L56,53.75 C56,51.655 57.7943059,50 59.8086681,50 L59.8086681,50 Z M72.5042285,55 C70.4035364,55 68.6955604,56.6825 68.6955604,58.75 C68.6955604,60.3775 69.7594483,61.7525 71.2346724,62.27 L71.2346724,62.27 L71.2346724,66.25 C71.2346724,66.9408333 71.8025872,67.5 72.5042285,67.5 C73.2058698,67.5 73.7737845,66.9408333 73.7737845,66.25 L73.7737845,66.25 L73.7737845,62.27 C75.2481623,61.7525 76.3128966,60.3775 76.3128966,58.75 C76.3128966,56.6825 74.6040742,55 72.5042285,55 Z M72.5,57 C73.3277,57 74,57.6724 74,58.5 C74,59.3276 73.3276,60 72.5,60 C71.6724,60 71,59.3276 71,58.5 C71,57.6724 71.6724,57 72.5,57 Z M72.99151,32 C80.7157914,32 87,38.16825 87,45.75 L87,45.75 L87,47 L87,47 L79.3590055,47 L79.3590055,45.75 C79.3590055,42.3039167 76.5023772,39.5 72.99151,39.5 C69.4806428,39.5 66.6240146,42.3039167 66.6240146,45.75 L66.6240146,45.75 L66.6240146,47 L66.6240146,47 L59,47 L59,45.75 C59,38.16825 65.2672286,32 72.99151,32 Z" id="path-1"></path>
+        <filter x="-22.7%" y="-17.4%" width="145.5%" height="134.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.668542395   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="SideNav" transform="translate(-51.000000, -1137.000000)" fill-rule="nonzero">
+            <g id="NavBar" transform="translate(0.000000, 563.000000)">
+                <g id="Group-6-Copy" transform="translate(0.000000, 547.000000)">
+                    <g id="Combined-Shape">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#F0B119" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

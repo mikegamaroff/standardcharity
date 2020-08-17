@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Combined Shape</title>
+    <defs>
+        <path d="M71,26 C85.9116882,26 98,38.0883118 98,53 C98,67.9116882 85.9116882,80 71,80 C56.0883118,80 44,67.9116882 44,53 C44,38.0883118 56.0883118,26 71,26 Z M76.724,42.636 L69.464,42.636 L61.181,47.916 L64.877,53.658 L68.804,50.952 L68.804,66 L76.724,66 L76.724,42.636 Z" id="path-1"></path>
+        <filter x="-13.9%" y="-13.9%" width="127.8%" height="127.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.668542395   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Copy-2" transform="translate(-39.000000, -645.000000)">
+            <g id="Group-3" transform="translate(0.000000, 624.000000)">
+                <g id="Group-2">
+                    <g id="Combined-Shape">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#F0B119" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

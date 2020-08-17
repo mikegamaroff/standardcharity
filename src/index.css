@@ -1,13 +1,662 @@
-body {
+@import url("https://fonts.googleapis.com/css2?&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@900&display=swap");
+body,
+.colorOverlay {
+  padding: 0px 0px;
+  background-color: rgb(5, 3, 36);
+  /*   transition: 0.4s ease-out; */
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Quicksand", sans-serif;
+  background-image: url("/images/bg.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.splashContainer,
+.splashPowered,
+.splashGrid,
+.topNavContainer,
+.sideNavContainer,
+.leaderItem,
+.leaderBoard,
+.fieldBack,
+.calendarContainer,
+.calendarChoice,
+.deployedBox img,
+.navButton {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+}
+.splashContainer {
+  position: absolute;
+  padding: 20px;
+
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+.splashTopTier {
+  height: 80%;
+}
+.splashLogo img {
+  max-width: 70%;
+  max-height: 150px;
+}
+.splashLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: bottom;
+  justify-content: flex-end;
+}
+.splashBlurb {
+}
+.splashBlurbContainer {
+  display: flex;
+  justify-content: center;
+}
+.splashButtonContainer {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  vertical-align: top;
+}
+.splashButton {
+  width: 55%;
+  max-width: 300px;
+  font-size: 21px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.donateButton {
+  width: 70%;
+  font-size: 30px;
+  height: 90px;
+  max-height: 80px;
+
+  background-image: url("/images/btnWide.svg");
+  margin: auto;
+}
+.donateButton img {
+  height: 30px;
+  padding: 0 0 0 15px;
+}
+.pdfBtn {
+  display: flex;
+  justify-content: center;
+  margin: 50px 30px 30px 30px;
+}
+.pdfBtn img {
+  width: 70%;
+  max-width: 250px;
+}
+.splashButton {
+  background-image: url("/images/btnStart.svg");
+}
+.splashButton,
+.donateButton {
+  background-repeat: no-repeat;
+
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+
+  display: flex;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+
+  border: 0;
+  cursor: pointer;
+  font-family: "Noto Sans HK", sans-serif;
+
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #040455;
+  letter-spacing: 0.43px;
+  text-align: center;
+
+  text-shadow: 1px 1px 1px #ffffff;
+}
+
+.splashPowered {
+  position: relative;
+
+  padding-bottom: 40px;
+  height: 20%;
+}
+.splashBlurb {
+  font-size: 4vw;
+  color: #ffffff;
+  letter-spacing: 0.29px;
+  text-align: center;
+  line-height: 5vw;
+  width: 70%;
+  font-weight: 100;
+  margin: auto;
+  font-style: italic;
+}
+
+.splashBlurb #yellow {
+  color: #c89b0e;
+}
+
+.splashEthereum2 {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: flex-end;
+  vertical-align: bottom;
+}
+
+.splashEthereum2 p {
+  color: #868686;
+  font-size: 12px;
+}
+
+.splashGrid {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 30% 20% 20% 30%;
+  position: absolute;
+  padding: 20px;
+
+  justify-content: center;
+  text-align: center;
+}
+
+.splashEthereum2 img {
+  max-width: 40%;
+  max-height: 100px;
+}
+
+.topNavContainer {
+  position: fixed;
+  top: 0;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 10% 80% 10%;
+  background-color: rgb(3, 1, 24);
+  padding: 10px;
+}
+.appTitle {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.walletSync {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+.walletSync img {
+  height: 27px;
+}
+.hamburger {
+}
+.hamburger img {
+  height: 16px;
+  position: fixed;
+  z-index: 11;
+  top: 15px;
+  left: 20px;
+}
+.sideNavContainer {
+  background-image: linear-gradient(
+    270deg,
+    rgba(0, 0, 72, 0.95) 0%,
+    #000000 100%
+  );
+  height: 100%;
+  position: fixed;
+  max-width: 70%;
+  width: 250px;
+  z-index: 10;
+  top: 0;
+  padding-top: 80px;
+  border: 3px solid #000000;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+}
+#sidenav {
+  transform: translateX(-300px);
+}
+.btn_donate {
+  padding: 6px 6px 6px 50px;
+  margin: 0 60px 0 -30px;
+  font-size: 15px;
+  border-radius: 43.5px;
+  color: #ffffff;
+  font-weight: 600;
+}
+#yellow.btn_donate,
+#yellow.glowBox {
+  border: 2px solid #d99f01;
+  box-shadow: 0 0 18px 0 #ffaa00;
+}
+
+#green.glowBox {
+  border: 2px solid #56d901;
+  box-shadow: 0 0 18px 0 #56d901;
+}
+#gray.glowBox {
+  border: 2px solid #494949;
+}
+.btn_donate,
+.glowBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  vertical-align: middle;
+  align-items: center;
+
+  background: rgba(56, 129, 255, 0.25);
+
+  letter-spacing: 0.33px;
+}
+.calchoice {
+  padding: 12px;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+.calchoice img {
+  height: 20px;
+  margin-right: 10px;
+}
+.generic {
+  padding: 20px;
+  flex-direction: column;
+  justify-content: center;
+}
+.glowBox {
+  display: flex;
+
+  border-radius: 20px;
+}
+.holdBox,
+.deployedBox {
+  padding-top: 15px;
+}
+.holdBox #total,
+.deployedBox #total,
+.latestDonation #total,
+.donateWallet #total {
+  font-weight: 800;
+  color: #ffffff;
+}
+.holdBox #total,
+.latestDonation #total,
+.donateWallet #total {
+  font-size: 25px;
+}
+.donateWallet #total {
+  margin: 5px;
+}
+.donateWallet #label {
+  font-size: 12px;
+  letter-spacing: 0.25px;
+  color: #acacac;
+}
+.donateWallet #eth {
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  color: #d99f01;
+  font-weight: 600;
+}
+.deployedBox #total {
+  font-size: 30px;
+}
+.deployedBox img {
+  height: 43px;
+  margin: 20px;
+}
+.deployedTotals {
+  font-size: 12px;
+  font-style: italic;
+  color: #ffffff;
+  margin: 3px;
+}
+.deployedTotals b {
+  color: #d99f01;
+  font-size: 14px;
+}
+.btn_donate img {
+  height: 25px;
+  padding-right: 15px;
+  margin-top: 5px;
+}
+.donationText {
+  padding-top: 18px;
+}
+.donationText p {
+  font-size: 13px;
+  color: #bebebe;
+  letter-spacing: 0.25px;
+  margin: 5px 0 0 20px;
+}
+.donationText #bigPrice {
+  font-weight: 800;
+  font-size: 14px;
+  color: #d99f01;
+  letter-spacing: 0.25px;
+  margin-bottom: 12px;
+}
+.donationText #smallPrice {
+  font-size: 12px;
+  color: #bfa158;
+  letter-spacing: 0.2px;
+  font-weight: 800;
+}
+.navButtons {
+  position: absolute;
+  width: 100%;
+  margin-top: 40px;
+}
+.navButton {
+  display: flex;
+  font-size: 12px;
+  font-weight: 100;
+  color: #bebebe;
+  letter-spacing: 0.3px;
+  background-image: url("/images/navButton.svg");
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  width: 100%;
+}
+.navButton img {
+  width: 22px;
+  margin-right: 10px;
+}
+.navFooter {
+  position: fixed;
+  bottom: 15px;
+  font-size: 11px;
+  color: #bebebe;
+  letter-spacing: 0.21px;
+  margin-left: 20px;
+}
+#closebtn {
+  opacity: 0;
+}
+.mainContent {
+  margin-top: 52px;
+  padding: 20px;
+  transition: 0.4s ease-out;
+}
+.howItWorks {
+  /*   padding: 20px; */
+}
+.howItWorks img {
+  width: 100%;
+}
+
+.howItWorksHeader,
+.leftHeader {
+  justify-content: space-between;
+}
+.centerHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.howItWorksHeader,
+.leftHeader {
+  display: flex;
+
+  height: 30px;
+  align-items: center;
+  vertical-align: middle;
+}
+.leftHeader,
+.centerHeader {
+  margin-bottom: 10px;
+}
+#indent.leftHeader {
+  margin-left: 20px;
+}
+.latestDonation {
+  margin-bottom: 20px;
+}
+.timeStamp,
+.latestDonation #key,
+.centerHeader #key,
+.centerHeader #keybg {
+  font-style: italic;
+  font-size: 12px;
+  letter-spacing: 0.25px;
+  color: #acacac;
+}
+.centerHeader #key,
+.centerHeader #keybg {
+  margin-bottom: 5px;
+}
+.centerHeader #keybg {
+  background: rgba(56, 129, 255, 0.25);
+  border-radius: 28px;
+  padding: 6px 10px 6px 10px;
+}
+.latestDonation #key {
+  margin-top: 7px;
+}
+
+.howItWorksHeader img {
+  height: 17px;
+}
+.howItWorksHeader h3 {
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 0.29px;
+  font-weight: 500;
+}
+.dontShow {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.58);
+  letter-spacing: 0.25px;
+  text-align: right;
+  font-style: italic;
+  display: grid;
+  grid-template-columns: 90% 10%;
+  align-items: center;
+  vertical-align: middle;
+}
+.dontShow span {
+  margin-right: 5px;
+}
+
+.howItWorksvideo {
+  border-radius: 25px;
+
+  overflow: hidden;
+  z-index: 1;
+}
+.donatedAmounts {
+  transition: 0.4s ease-out;
+}
+.donatedAmounts h2,
+.leftHeader h2,
+.centerHeader h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 16px;
+}
+.donatedAmounts h2#yellow,
+.leftHeader h2#yellow {
+  color: #d99f01;
+}
+.centerHeader {
+  color: white;
+}
+.centerHeader #yellow {
+  color: #d99f01;
+}
+.donatedAmounts h2#green {
+  color: #56d901;
+}
+.leaderBoard {
+  width: 100%;
+}
+.leaderItem {
+  padding: 10px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 10% 60% 30%;
+
+  background-image: linear-gradient(
+    180deg,
+    rgba(170, 228, 255, 0.12) 1%,
+    rgba(82, 85, 255, 0.31) 100%
+  );
+}
+.leaderItem img {
+  height: 27px;
+  display: flex;
+  align-items: center;
+}
+.leaderItem #key {
+  font-size: 13px;
+  color: #bebebe;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+}
+.leaderItem #amount {
+  font-size: 14px;
+  color: #f0b119;
+  letter-spacing: 0.3px;
+
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+
+  align-items: center;
+}
+.downArrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: bottom;
+
+  padding: 20px 0 10px 0;
+}
+.downArrow img {
+  width: 35px;
+}
+
+.fieldBack {
+  background-image: linear-gradient(
+    180deg,
+    rgba(170, 228, 255, 0.21) 0%,
+    rgba(82, 85, 255, 0.31) 100%
+  );
+  width: 100%;
+  padding: 15px;
+  border-bottom: 3px solid #f0b119;
+  display: flex;
+}
+.currencySwitcher img {
+  height: 50px;
+  margin-right: 10px;
+}
+.fieldBack input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  height: 50px;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 40px;
+  padding: 5px;
+}
+.fieldBack input:focus {
+  background-image: linear-gradient(
+    180deg,
+    rgba(170, 228, 255, 0.21) 0%,
+    rgba(82, 85, 255, 0.31) 100%
+  );
+}
+.conversion {
+  font-size: 17px;
+  color: #bebebe;
+  letter-spacing: 0.32px;
+  padding: 10px 0px 10px 20px;
+}
+.paragraphText {
+  color: #c7c7c7;
+  text-align: center;
+  padding: 0px 20px 0 20px;
+  font-size: 14px;
+  font-weight: 100;
+}
+.calendarContainer {
+  display: grid;
+  grid-template-columns: 40% 20% 40%;
+  padding: 10px;
+}
+.calendarChoice,
+.calendarIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+}
+.calendarIcon img {
+  height: 25px;
+}
+.middleArrow {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.middleArrow img {
+  height: 35px;
+}
+.colorOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: none;
+  z-index: 9;
+}
+#dead {
+  pointer-events: none;
+}
+
+.placeHolder_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+.placeHolder_btn img {
+  height: 20px;
+  margin-right: 10px;
 }

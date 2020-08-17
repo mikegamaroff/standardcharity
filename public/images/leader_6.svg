@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Combined Shape</title>
+    <defs>
+        <path d="M71,26 C85.9116882,26 98,38.0883118 98,53 C98,67.9116882 85.9116882,80 71,80 C56.0883118,80 44,67.9116882 44,53 C44,38.0883118 56.0883118,26 71,26 Z M78.407,42.636 L68.87,42.636 L63.524,50.127 C62.369,51.744 62.369,51.744 61.4945,53.6745 C60.62,55.605 60.62,55.605 60.62,57.816 C60.62,60.06 60.62,60.06 61.445,61.7265 C62.27,63.393 62.27,63.393 63.689,64.482 C65.108,65.571 65.108,65.571 66.956,66.1155 C68.804,66.66 68.804,66.66 70.85,66.66 C72.896,66.66 72.896,66.66 74.744,66.099 C76.592,65.538 76.592,65.538 78.011,64.416 C79.43,63.294 79.43,63.294 80.255,61.6275 C81.08,59.961 81.08,59.961 81.08,57.75 C81.08,55.869 81.08,55.869 80.4035,54.417 C79.727,52.965 79.727,52.965 78.605,51.975 C77.483,50.985 77.483,50.985 76.0475,50.4735 C74.7914375,50.0259375 74.7914375,50.0259375 73.4722109,49.9699922 L73.094,49.962 L72.731,49.962 L73.028,49.599 L78.407,42.636 Z M70.85,55.44 C71.972,55.44 71.972,55.44 72.6485,56.1165 C73.325,56.793 73.325,56.793 73.325,57.783 C73.325,58.806 73.325,58.806 72.6485,59.499 C71.972,60.192 71.972,60.192 70.85,60.192 C69.794,60.192 69.794,60.192 69.1175,59.499 C68.441,58.806 68.441,58.806 68.441,57.783 C68.441,56.793 68.441,56.793 69.1175,56.1165 C69.794,55.44 69.794,55.44 70.85,55.44 Z" id="path-1"></path>
+        <filter x="-13.9%" y="-13.9%" width="127.8%" height="127.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.668542395   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Copy-2" transform="translate(-39.000000, -1185.000000)">
+            <g id="Group-3" transform="translate(0.000000, 624.000000)">
+                <g id="Group-2-Copy-6" transform="translate(0.000000, 540.000000)">
+                    <g id="Combined-Shape">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#F0B119" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

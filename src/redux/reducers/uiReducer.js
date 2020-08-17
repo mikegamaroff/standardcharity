@@ -1,4 +1,4 @@
-import { SET_ERRORS, LOADING_UI, CLEAR_ERRORS } from "../types";
+import { SET_ERRORS, LOADING_UI, CLEAR_ERRORS, GET_CURRENCY } from "../types";
 
 const initialState = {
   loading: false,
@@ -24,6 +24,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loading: true,
+      };
+
+    case GET_CURRENCY:
+      return {
+        ...state,
+        price: action.payload,
       };
 
     default:

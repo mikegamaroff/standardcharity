@@ -14,7 +14,7 @@ class Donate extends Component {
     // console.log(props);
   };
   render() {
-    // const { price } = this.props;
+    const { account, price, btnPress } = this.props;
 
     return (
       <div>
@@ -23,13 +23,23 @@ class Donate extends Component {
             <h2>
               From <span id="yellow">your address:</span>
             </h2>
-            <span id="key">0x931D387731bBbC988B312206c74F77D004D6B84b</span>
+            {/*  <span id="key">0x931D387731bBbC988B312206c74F77D004D6B84b</span> */}
+            <span id="key">{account && account.wallet}</span>
           </div>
           <div className="donateWallet">
             <div className="glowBox generic" id="yellow">
               <div id="label">Wallet balance:</div>
-              <span id="total">$114.23</span>
-              <div id="eth">0.032 ETH</div>
+              <span id="total">{account && account.balance + " ETH"}</span>
+              <div id="eth">
+                $
+                {account && price ? (
+                  <>
+                    {parseFloat(
+                      (account.balance * Number(price.USD)).toFixed(2)
+                    ).toLocaleString()}{" "}
+                  </>
+                ) : null}
+              </div>
             </div>
           </div>
         </div>
@@ -40,17 +50,17 @@ class Donate extends Component {
           <h2>
             To <span id="yellow">Standard Charity's address</span>
           </h2>
-          <span id="keybg">0x931D387731bBbC988B312206c74F77D004D6B84b</span>
+          <span id="keybg">0xCDE896b4C249F337D231F625Fc541189e96C6c7f</span>
         </div>
 
         <EthInput
-          price={this.props.price && this.props.price.USD}
-          btnPress={this.props.btnPress}
+          price={price && price.USD}
+          btnPress={btnPress}
           heading={"Donation amount"}
         />
         <div
           className="donateButton"
-          onMouseDown={this.props.btnPress}
+          onMouseDown={btnPress}
           style={{ marginTop: "10px", marginBottom: "20px" }}
         >
           Donate
@@ -67,6 +77,7 @@ const mapStateToProps = (state) => {
   return {
     state: state,
     price: state.UI.price,
+    account: state.wallet.account,
   };
 };
 

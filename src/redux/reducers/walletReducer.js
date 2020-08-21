@@ -1,4 +1,4 @@
-import {} from "../types";
+import { GET_WALLET } from "../types";
 
 const initialState = {
   loading: false,
@@ -7,11 +7,11 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    /*   case UPDATING_ADDRESS:
+    case GET_WALLET:
       return {
         ...state,
-        loading: true,
-      }; */
+        account: action.payload,
+      };
 
     default:
       return state;

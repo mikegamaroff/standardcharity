@@ -54,6 +54,13 @@ body,
 }
 .splashBlurb {
 }
+.metamaskImage img {
+  width: 100px;
+  margin: 50px 0px 10px 0px;
+}
+.downloadMetamask {
+  color: white;
+}
 .splashBlurbContainer {
   display: flex;
   justify-content: center;

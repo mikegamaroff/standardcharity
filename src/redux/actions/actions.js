@@ -1,4 +1,4 @@
-import { GET_CURRENCY } from "../types";
+import { GET_CURRENCY, GET_WALLET } from "../types";
 import axios from "axios";
 
 export function getCurrency() {
@@ -14,5 +14,11 @@ export function getCurrency() {
         console.log(err);
         return err;
       });
+  };
+}
+
+export function getWallet(account) {
+  return function (dispatch) {
+    dispatch({ type: GET_WALLET, payload: account });
   };
 }

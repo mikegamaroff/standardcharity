@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-let dollarConvert;
-let ethConvert;
+let dollarConvert = 0;
+let ethConvert = 0;
 class EthInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
       //units: null
       currency: "dollar",
+      conversion: 0,
+      amount: 0,
     };
   }
 
@@ -40,6 +42,7 @@ class EthInput extends Component {
     });
   };
   currencySwitch = () => {
+    console.log(this.state.amount);
     dollarConvert = parseFloat(
       (this.state.amount / Number(this.props.price)).toFixed(2)
     ).toLocaleString();
@@ -48,6 +51,9 @@ class EthInput extends Component {
       (this.state.amount * Number(this.props.price)).toFixed(2)
     ).toLocaleString();
 
+    // !isNaN(dollarConvert) &&
+    // !isNaN(ethConvert)
+
     this.setState(
       {
         currency: this.state.currency === "dollar" ? "eth" : "dollar",
@@ -55,11 +61,7 @@ class EthInput extends Component {
       () => {
         this.setState({
           conversion:
-            this.state.currency === "dollar" &&
-            !isNaN(dollarConvert) &&
-            !isNaN(ethConvert)
-              ? dollarConvert
-              : ethConvert,
+            this.state.currency === "dollar" ? dollarConvert : ethConvert,
         });
       }
     );

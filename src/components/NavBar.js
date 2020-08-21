@@ -152,7 +152,14 @@ class NavBar extends Component {
 
           <div className="appTitle">Standard Charity</div>
           <div className="walletSync">
-            <img src="/images/walletSynced.svg" alt="Wallet" />
+            <img
+              src={
+                this.props.synced
+                  ? "/images/walletSynced.svg"
+                  : "/images/walletUnsynced.svg"
+              }
+              alt="Wallet"
+            />
           </div>
         </div>
         <div className="colorOverlay" id="overlay"></div>

@@ -30,6 +30,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         price: action.payload,
+        loading: false,
       };
 
     default:

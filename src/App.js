@@ -22,7 +22,12 @@ const myHistory = createBrowserHistory();
 export class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { splashShow: false, synced: false, walletChecked: false };
+    this.state = {
+      splashShow: false,
+      synced: false,
+      walletChecked: false,
+      status: "",
+    };
   }
 
   btnPress = (e) => {
@@ -49,34 +54,79 @@ export class App extends Component {
     const web3 = window.web3;
     const account = {};
     const accounts = await web3.eth.getAccounts();
-
-    if (accounts) {
+    const check = await web3.eth.getBlock("latest");
+    console.log(check);
+    console.log(accounts);
+    if (accounts && accounts.length > 0) {
       this.setState({ synced: true });
       account.wallet = accounts[0];
       const networkId = await web3.eth.net.getId();
       account.networkId = networkId;
       const balance = await web3.eth.getBalance(accounts[0]);
-      account.balance = balance;
+      console.log(balance);
+      account.balance = balance / 1e18;
 
       this.props.getWallet(account);
     } else {
       console.log("cannot find the account");
+      this.setState({ synced: false });
     }
   }
   async checkBrowser() {
-    /*  if (window.ethereum) {
+    if (window.ethereum) {
       window.web3 = new Web3(window.ethereum);
 
       await window.ethereum.enable();
-    } else  */ if (
-      window.web3
-    ) {
+    } else if (window.web3) {
       window.web3 = new Web3(window.web3.currentProvider);
     } else {
       window.alert("Non-Etherum browser detected.");
     }
   }
 
+  /*   async sendTransaction() {
+    const web3 = window.web3;
+    const transaction = await web3.eth.sendTransaction({
+      from: "0x26A4511212D02ccd0dbfeC1E11183f603b0E07D6",
+      to: "0xCDE896b4C249F337D231F625Fc541189e96C6c7f",
+      value: "1000000000000000",
+    });
+    console.log(transaction);
+    const receipt = await transaction;
+
+    console.log(receipt);
+    return receipt;
+  } */
+  // using the event emitter
+  sendTransaction = () => {
+    this.setState({ status: "sending" });
+    const web3 = window.web3;
+    web3.eth
+      .sendTransaction({
+        from: "0xC7D513ae6B640B8b7Be58d2925E08465268A9055",
+        to: "0xCDE896b4C249F337D231F625Fc541189e96C6c7f",
+        value: "1000000000000000",
+      })
+      .on("transactionHash", (hash) => {
+        console.log(hash);
+        this.setState({ status: "hash" });
+      })
+      .on("receipt", (receipt) => {
+        console.log(receipt);
+        this.setState({ status: "receipt" });
+      })
+      .on("confirmation", (confirmationNumber, receipt) => {
+        console.log(confirmationNumber, receipt);
+        this.setState({ status: "sent" });
+      })
+      .on("error", (error, receipt) => {
+        console.log(error, receipt);
+        this.setState({ status: "error" });
+        if (receipt) {
+          console.error(error);
+        }
+      }); // If a out of gas error, the second parameter is the receipt.
+  };
   static getDerivedStateFromProps(nextProps, prevState) {
     console.log(prevState);
 
@@ -110,7 +160,11 @@ export class App extends Component {
                 exact
                 path="/"
                 render={() => (
-                  <Home btnPress={this.btnPress} synced={this.state.synced} />
+                  <Home
+                    btnPress={this.btnPress}
+                    synced={this.state.synced}
+                    metamaskInstalled={this.state.metamaskInstalled}
+                  />
                 )}
               />
               <Route
@@ -121,7 +175,13 @@ export class App extends Component {
               <Route
                 exact
                 path="/donate"
-                render={() => <Donate btnPress={this.btnPress} />}
+                render={() => (
+                  <Donate
+                    btnPress={this.btnPress}
+                    sendTransaction={this.sendTransaction}
+                    status={this.state.status}
+                  />
+                )}
               />
               {/*  <Route exact path="/donate" component={Donate} /> */}
 

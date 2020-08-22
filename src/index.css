@@ -515,11 +515,24 @@ body,
 .centerHeader {
   color: white;
 }
+.centerHeader #gray {
+  color: #a1a1a1;
+}
 .centerHeader #yellow {
   color: #d99f01;
 }
+.centerHeader #blue {
+  color: #019cd9;
+}
+.centerHeader #green {
+  color: #01d91e;
+}
 .donatedAmounts h2#green {
   color: #56d901;
+}
+.loadingFox img {
+  width: 45px;
+  margin-top: 20px;
 }
 .leaderBoard {
   width: 100%;

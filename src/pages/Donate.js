@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import EthInput from "../components/EthInput";
+import FoxLoader from "../components/FoxLoader";
 class Donate extends Component {
   state = {
     //units: null
@@ -14,7 +15,7 @@ class Donate extends Component {
     // console.log(props);
   };
   render() {
-    const { account, price, btnPress } = this.props;
+    const { account, price, btnPress, sendTransaction, status } = this.props;
 
     return (
       <div>
@@ -47,10 +48,45 @@ class Donate extends Component {
           <img src="/images/downArrow.svg" alt="Down" />
         </div>
         <div className="centerHeader">
-          <h2>
-            To <span id="yellow">Standard Charity's address</span>
-          </h2>
-          <span id="keybg">0xCDE896b4C249F337D231F625Fc541189e96C6c7f</span>
+          {status === "sending" ? (
+            <>
+              {" "}
+              <h2>
+                <span id="gray">Sending transaction...</span>
+                <div className="loadingFox">
+                  <FoxLoader />
+                </div>
+              </h2>
+            </>
+          ) : status === "hash" ? (
+            <>
+              <span id="blue">Generating receipt...</span>
+              <div className="loadingFox">
+                <FoxLoader />
+              </div>
+            </>
+          ) : status === "receipt" ? (
+            <>
+              <span id="yellow">Saving receipt...</span>
+              <div className="loadingFox">
+                <FoxLoader />
+              </div>
+            </>
+          ) : status === "sent" ? (
+            <>
+              <span id="green">Transaction complete!</span>
+              <div className="loadingFox">
+                <img src="/images/tick.svg" />
+              </div>
+            </>
+          ) : (
+            <>
+              <h2>
+                To <span id="yellow">Standard Charity's address</span>
+              </h2>
+              <span id="keybg">0xCDE896b4C249F337D231F625Fc541189e96C6c7f</span>
+            </>
+          )}
         </div>
 
         <EthInput
@@ -61,6 +97,7 @@ class Donate extends Component {
         <div
           className="donateButton"
           onMouseDown={btnPress}
+          onClick={sendTransaction}
           style={{ marginTop: "10px", marginBottom: "20px" }}
         >
           Donate

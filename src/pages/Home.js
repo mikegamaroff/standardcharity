@@ -26,16 +26,34 @@ class Home extends Component {
     this.setState({
       blurbText: (
         <div>
-          <div className="splashBlurb">
-            To begin, you must have a Metamask ethereum enabled browser with a
-            synced wallet.
-          </div>
-          <a href="http://metamask.io">
-            <div className="metamaskImage">
-              <img src="/images/metamask.svg" />
-            </div>
-            <div className="downloadMetamask">DOWNLOAD METAMASK</div>
-          </a>
+          {" "}
+          {!this.props.synced && !this.props.metamaskInstalled ? (
+            <>
+              <div className="splashBlurb">
+                To begin, you must have a Metamask ethereum enabled browser with
+                a synced wallet.
+              </div>
+              <a href="http://metamask.io">
+                <div className="metamaskImage">
+                  <img src="/images/metamask.svg" />
+                </div>
+                <div className="downloadMetamask">DOWNLOAD METAMASK</div>
+              </a>
+            </>
+          ) : !this.props.synced && this.props.metamaskInstalled ? (
+            <>
+              <div className="splashBlurb">
+                You have a Metamask browser but you must setup your ethereum
+                wallet in your Metamask settings.
+              </div>
+              <a href="https://metamask.zendesk.com/hc/en-us/articles/360015489531-Getting-Started-With-MetaMask-Part-1-">
+                <div className="metamaskImage">
+                  <img src="/images/metamask.svg" />
+                </div>
+                <div className="downloadMetamask">GET HELP</div>
+              </a>
+            </>
+          ) : null}
         </div>
       ),
     });
@@ -72,7 +90,7 @@ class Home extends Component {
     });
   };
   render() {
-    const { account, synced } = this.props;
+    const { account, synced, noAccount } = this.props;
 
     console.log(account && account.wallet);
     console.log(this.props);

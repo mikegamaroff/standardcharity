@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="322px" height="245px" viewBox="0 0 322 245" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Path</title>
+    <defs>
+        <radialGradient cx="62.0267492%" cy="0%" fx="62.0267492%" fy="0%" r="123.507791%" gradientTransform="translate(0.620267,0.000000),scale(0.757248,1.000000),rotate(97.388263),translate(-0.620267,-0.000000)" id="radialGradient-1">
+            <stop stop-color="#D4DF01" offset="0%"></stop>
+            <stop stop-color="#41DB00" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Finals_blue" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M320.92,7.4 L129.88,242.92 C129.202,243.744 128.222,244.262 127.16,244.360392 L126.76,244.360392 C125.83,244.373 124.925,244.062 124.2,243.48 L1.56,144.12 C-0.075,142.634 -0.195,140.104 1.29,138.47 C1.376,138.376 1.465,138.286 1.56,138.2 L0.84,138.2 L50.04,89 C51.585,87.527 54.015,87.527 55.56,89 L128.84,154.92 L315.24,1.8 C316.907,0.351 319.434,0.527 320.883,2.195 C322.177,3.683 322.193,5.893 320.92,7.4 Z" id="Path" fill="url(#radialGradient-1)" fill-rule="nonzero"></path>
+    </g>
+</svg>

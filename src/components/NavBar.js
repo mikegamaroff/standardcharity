@@ -130,11 +130,17 @@ class NavBar extends Component {
               <img src="/images/navIcon_receipt.svg" alt="Receipt" />
               <h3>Request receipt</h3>
             </div>
-            <div className="navButton">
+            <div
+              className="navButton"
+              onClick={() => this.menuHamburger("/howitworks")}
+            >
               <img src="/images/navIcon_info.svg" alt="Info" />
               <h3>How it works</h3>
             </div>
-            <div className="navButton">
+            <div
+              className="navButton"
+              onClick={() => this.menuHamburger("/about")}
+            >
               <img src="/images/navIcon_about.svg" alt="About" />
               <h3>About</h3>
             </div>

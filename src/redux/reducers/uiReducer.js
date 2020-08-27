@@ -1,4 +1,14 @@
-import { SET_ERRORS, LOADING_UI, CLEAR_ERRORS, GET_CURRENCY } from "../types";
+import {
+  SET_ERRORS,
+  LOADING_UI,
+  CLEAR_ERRORS,
+  GET_CURRENCY,
+  GET_DONATIONS,
+  GET_LATEST,
+  GET_LEADERBOARD,
+  GET_TOTAL_EXPENDITURE,
+  GET_PLATES,
+} from "../types";
 
 const initialState = {
   loading: false,
@@ -30,6 +40,36 @@ export default function (state = initialState, action) {
       return {
         ...state,
         price: action.payload,
+        loading: false,
+      };
+    case GET_DONATIONS:
+      return {
+        ...state,
+        donations: action.payload,
+        loading: false,
+      };
+    case GET_LATEST:
+      return {
+        ...state,
+        latest: action.payload,
+        loading: false,
+      };
+    case GET_LEADERBOARD:
+      return {
+        ...state,
+        leaderboard: action.payload,
+        loading: false,
+      };
+    case GET_TOTAL_EXPENDITURE:
+      return {
+        ...state,
+        expenditures: action.payload,
+        loading: false,
+      };
+    case GET_PLATES:
+      return {
+        ...state,
+        plates: action.payload,
         loading: false,
       };
 

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import EthInput from "../components/EthInput";
+import TextInput from "../components/TextInput";
 class Receive extends Component {
   state = {
     //units: null
@@ -16,22 +17,32 @@ class Receive extends Component {
     // console.log(props);
   };
   render() {
-    //  const {} = this.props;
-    console.log(this.props);
+    const { setAmount, plates, setInput, btnPress, price } = this.props;
+
     return (
       <div>
-        <div className="mainContent">
+        <div className="receiveText">
           <EthInput
-            price={this.props.price && this.props.price.USD}
-            btnPress={this.props.btnPress}
+            price={price && price}
+            btnPress={btnPress}
             heading={"Amount requested"}
+            setAmount={setAmount}
           />
+        </div>
+        <div>
+          <TextInput
+            heading={"Number of plates"}
+            name="plates"
+            setInput={setInput}
+          />
+        </div>
+        <div className="mainContent">
           <div className="pdfBtn">
             <img src="/images/pdfBtn.svg" alt="PDF Upload" />
           </div>
           <div
             className="donateButton"
-            style={{ marginTop: "80px" }}
+            style={{ marginTop: "40px" }}
             onClick={() => this.setState({ splashShow: false })}
           >
             Request

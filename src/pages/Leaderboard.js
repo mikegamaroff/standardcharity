@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
-
+import moment from "moment";
 let leaderItems = [
   { key: "0x931D387731bBbC988B312206c...", amount: "$12,430.22" },
   { key: "0x52373e5b61bBbC988B312206c...", amount: "$10,242.00" },
@@ -29,7 +29,7 @@ class Leaderboard extends Component {
     // console.log(props);
   };
   render() {
-    // const {} = this.props;
+    const { latest, leaderboard } = this.props;
     console.log(this.props);
     return (
       <div>
@@ -37,11 +37,19 @@ class Leaderboard extends Component {
           <div className="latestDonation">
             <div className="leftHeader">
               <h2 id="yellow">Latest donation:</h2>
-              <div className="timeStamp">24hrs ago</div>
+              <div className="timeStamp">
+                {moment(latest && latest.timestamp * 1000)
+                  .startOf("hour")
+                  .fromNow()}
+              </div>
             </div>
             <div className="glowBox generic" id="yellow">
-              <span id="total">$3,321</span>
-              <span id="key">0x931D387731bBbC988B312206c74F77D004D6B84b</span>
+              <span id="total">
+                {latest &&
+                  Number(latest.value / 1000000000000000000).toFixed(3)}{" "}
+                ETH
+              </span>
+              <span id="key">{latest && latest.donator}</span>
             </div>
           </div>
         </div>
@@ -49,17 +57,23 @@ class Leaderboard extends Component {
           <div className="leftHeader" id="indent">
             <h2 id="yellow">Top donors:</h2>
           </div>
-          {leaderItems.map((val, i) => {
-            return (
-              <div className="leaderItem" key={i * Math.random()}>
-                <div>
-                  <img src={"/images/leader_" + (i + 1) + ".svg"} alt={i + 1} />
+          {leaderboard &&
+            leaderboard.map((val, i) => {
+              return (
+                <div className="leaderItem" key={i * Math.random()}>
+                  <div>
+                    <img
+                      src={"/images/leader_" + (i + 1) + ".svg"}
+                      alt={i + 1}
+                    />
+                  </div>
+                  <div id="key">{val.donator.slice(0, 25)}...</div>
+                  <div id="amount">
+                    {Number(val.value / 1e18).toFixed(3)} ETH
+                  </div>
                 </div>
-                <div id="key">{val.key}</div>
-                <div id="amount">{val.amount}</div>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
       </div>
     );
@@ -72,6 +86,8 @@ const mapStateToProps = (state) => {
   return {
     state: state,
     UI: state.UI,
+    latest: state.UI.latest,
+    leaderboard: state.UI.leaderboard,
   };
 };
 

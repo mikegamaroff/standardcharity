@@ -4,6 +4,14 @@ import YouTube from "react-youtube";
 import { TweenLite, Power4 } from "gsap";
 import { Link } from "react-router-dom";
 localStorage.removeItem("videoForget");
+const opts = {
+  height: "220",
+  width: "100%",
+  playerVars: {
+    // https://developers.google.com/youtube/player_parameters
+    autoplay: 0,
+  },
+};
 class Home extends Component {
   state = {
     //units: null
@@ -26,7 +34,6 @@ class Home extends Component {
     this.setState({
       blurbText: (
         <div>
-          {" "}
           {!this.props.synced && !this.props.metamaskInstalled ? (
             <>
               <div className="splashBlurb">
@@ -90,18 +97,11 @@ class Home extends Component {
     });
   };
   render() {
-    const { account, synced, noAccount } = this.props;
+    const { account, synced, expenditures, plates, ethToDollar } = this.props;
 
     console.log(account && account.wallet);
     console.log(this.props);
-    const opts = {
-      height: "220",
-      width: "100%",
-      playerVars: {
-        // https://developers.google.com/youtube/player_parameters
-        autoplay: 0,
-      },
-    };
+
     return (
       <div>
         {!synced ? (
@@ -158,13 +158,25 @@ class Home extends Component {
                 <div className="deployedBox">
                   <h2 id="green">Deployed</h2>
                   <div className="glowBox generic" id="green">
-                    <span id="total">$3,351</span>
+                    <span id="total">
+                      {expenditures &&
+                        Number(expenditures.totalExpendedEth / 1e18).toFixed(
+                          3
+                        )}{" "}
+                      <b>ETH</b>
+                    </span>
+                    {expenditures ? (
+                      <span id="dollar">
+                        ${ethToDollar(expenditures.totalExpendedEth / 1e18)}
+                      </span>
+                    ) : null}
+
                     <img src="/images/foodIcon.svg" alt="Food" />
                     <div className="deployedTotals">
-                      <b>1,540</b> plates of food
+                      <b>{plates && plates.platesDeployed}</b> plates of food
                     </div>
                     <div className="deployedTotals">
-                      <b>$2.21c</b> per plate
+                      <b>${plates && plates.pricePerPlateUsd}</b> per plate
                     </div>
                   </div>
                 </div>
@@ -184,13 +196,12 @@ const mapStateToProps = (state) => {
     state: state,
     UI: state.UI,
     account: state.wallet && state.wallet.account,
+    plates: state.UI.plates,
+    expenditures: state.UI.expenditures,
   };
 };
 
-const mapActionsToProps = (dispatch) => ({
-  // getCurrency: (ggg) => dispatch(getCurrency(ggg)),
-  //  getCurrency: (ggg) => dispatch(getCurrency(ggg)),
-});
+const mapActionsToProps = (dispatch) => ({});
 
 export default connect(mapStateToProps, mapActionsToProps)(Home);
 ///////

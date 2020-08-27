@@ -12,6 +12,7 @@ body,
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-attachment: fixed;
 }
 .splashContainer,
 .splashPowered,
@@ -95,7 +96,7 @@ body,
 .pdfBtn {
   display: flex;
   justify-content: center;
-  margin: 50px 30px 30px 30px;
+  margin: 20px 30px 30px 30px;
 }
 .pdfBtn img {
   width: 70%;
@@ -331,6 +332,14 @@ body,
 }
 .deployedBox #total {
   font-size: 30px;
+}
+.deployedBox #total b {
+  font-size: 15px;
+  color: #acacac;
+}
+.deployedBox #dollar {
+  font-size: 15px;
+  color: #ffd416;
 }
 .deployedBox img {
   height: 43px;
@@ -624,12 +633,37 @@ body,
   letter-spacing: 0.32px;
   padding: 10px 0px 10px 20px;
 }
+.paragraphText,
+.bodyText {
+  padding: 0px 20px 0 20px;
+  font-size: 14px;
+}
 .paragraphText {
   color: #c7c7c7;
   text-align: center;
-  padding: 0px 20px 0 20px;
-  font-size: 14px;
   font-weight: 100;
+}
+.bodyText p,
+.bodyText ol {
+  font-weight: 400;
+}
+.bodyText p {
+  color: #bebcbc;
+  text-align: justify;
+  line-height: 1.7em;
+}
+.bodyText ol {
+  text-align: left;
+  color: #888888;
+  line-height: 1.5em;
+}
+.bodyText h2 {
+  color: #f0b119;
+  text-align: left;
+  font-weight: 400;
+  line-height: 1.7em;
+  font-size: 16px;
+  margin-top: 40px;
 }
 .calendarContainer {
   display: grid;
@@ -679,4 +713,8 @@ body,
 .placeHolder_btn img {
   height: 20px;
   margin-right: 10px;
+}
+.receiveText {
+  margin-top: 10vh;
+  margin-bottom: 20px;
 }

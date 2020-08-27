@@ -28,21 +28,28 @@ class EthInput extends Component {
 
   componentWillUnmount() {} */
   handleChange = (e) => {
-    console.log(this.props.price);
-    this.setState({
-      amount: e.target.value,
-      conversion:
-        this.state.currency === "dollar"
-          ? parseFloat(
-              (e.target.value / Number(this.props.price)).toFixed(2)
-            ).toLocaleString()
-          : parseFloat(
-              (e.target.value * Number(this.props.price)).toFixed(2)
-            ).toLocaleString(),
-    });
+    this.setState(
+      {
+        amount: e.target.value,
+        conversion:
+          this.state.currency === "dollar"
+            ? parseFloat(
+                (e.target.value / Number(this.props.price)).toFixed(2)
+              ).toLocaleString()
+            : parseFloat(
+                (e.target.value * Number(this.props.price)).toFixed(2)
+              ).toLocaleString(),
+      },
+      () => {
+        this.props.setAmount(
+          this.state.amount,
+          this.state.currency,
+          this.state.conversion
+        );
+      }
+    );
   };
   currencySwitch = () => {
-    console.log(this.state.amount);
     dollarConvert = parseFloat(
       (this.state.amount / Number(this.props.price)).toFixed(2)
     ).toLocaleString();
@@ -59,10 +66,19 @@ class EthInput extends Component {
         currency: this.state.currency === "dollar" ? "eth" : "dollar",
       },
       () => {
-        this.setState({
-          conversion:
-            this.state.currency === "dollar" ? dollarConvert : ethConvert,
-        });
+        this.setState(
+          {
+            conversion:
+              this.state.currency === "dollar" ? dollarConvert : ethConvert,
+          },
+          () => {
+            this.props.setAmount(
+              this.state.amount,
+              this.state.currency,
+              this.state.conversion
+            );
+          }
+        );
       }
     );
   };

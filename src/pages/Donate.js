@@ -15,7 +15,14 @@ class Donate extends Component {
     // console.log(props);
   };
   render() {
-    const { account, price, btnPress, sendTransaction, status } = this.props;
+    const {
+      account,
+      price,
+      btnPress,
+      sendTransaction,
+      status,
+      setAmount,
+    } = this.props;
 
     return (
       <div>
@@ -36,7 +43,7 @@ class Donate extends Component {
                 {account && price ? (
                   <>
                     {parseFloat(
-                      (account.balance * Number(price.USD)).toFixed(2)
+                      (account.balance * Number(price)).toFixed(2)
                     ).toLocaleString()}{" "}
                   </>
                 ) : null}
@@ -84,15 +91,16 @@ class Donate extends Component {
               <h2>
                 To <span id="yellow">Standard Charity's address</span>
               </h2>
-              <span id="keybg">0xCDE896b4C249F337D231F625Fc541189e96C6c7f</span>
+              <span id="keybg">{account && account.standardWallet}</span>
             </>
           )}
         </div>
 
         <EthInput
-          price={price && price.USD}
+          price={price && price}
           btnPress={btnPress}
           heading={"Donation amount"}
+          setAmount={setAmount}
         />
         <div
           className="donateButton"

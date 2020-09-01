@@ -88,7 +88,6 @@ export class App extends Component {
     console.log(check);
 
     if (accounts && accounts.length > 0) {
-      console.log(accounts);
       this.setState({ synced: true });
       account.wallet = accounts[0];
       const networkId = await web3.eth.net.getId();
